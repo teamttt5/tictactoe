@@ -18,7 +18,7 @@ public class TicTacToe {
 			
 			
 			
-			
+	/*		
 			if(i==0||i==2||i==4||i==6||i==8)
 			
 			{
@@ -83,7 +83,8 @@ public class TicTacToe {
 
 		}
 		System.out.println("draw");
-	//}
+		*/
+	}
 
 
 
