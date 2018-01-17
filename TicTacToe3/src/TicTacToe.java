@@ -252,7 +252,16 @@ public class TicTacToe {
 	public static int PlayerChoice(int[][]board){
 
 		int code=0;
-
+		do {
+			//your turn	
+			System.out.println("row column");	
+			row = keyboard.nextInt();	
+			column = keyboard.nextInt();
+			if (board[row][column]!=0) {
+				System.out.println("not available");
+			}
+		}while(board[row][column]!=0);
+		
 
 		return code;
 	}
