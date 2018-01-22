@@ -9,10 +9,15 @@ public class TicTacToe {
 		int row=0,column=0;
 		board[row][column]=1;
 		
-		for(;;) {
+		for(;;) 
+		{
 		int code= PlayerChoice(board);
 		
+		
+		
 		}
+		
+		/*
 		//for(int i=0;i<9;i++) {
 			
 			
@@ -84,7 +89,8 @@ public class TicTacToe {
 		}
 		System.out.println("draw");
 	//}
-
+*/
+	}
 
 
 
@@ -252,6 +258,7 @@ public class TicTacToe {
 	public static int PlayerChoice(int[][]board){
 
 		int code=0;
+		/*
 		do {
 			//your turn	
 			System.out.println("row column");	
@@ -262,7 +269,7 @@ public class TicTacToe {
 			}
 		}while(board[row][column]!=0);
 		
-
+*/
 		return code;
 	}
 
@@ -270,12 +277,85 @@ public class TicTacToe {
 	public static int ComputerChoice(int[][]board){
 
 		int code=0;
-
+		
+		
+		if (FindOneToWin(board))
+		{
+			code=1;
+			return code;
+		}
+		
+		
+		if (FindOneToBlock(board))
+		{
+			return checkresult(board);
+		}
+		
+		if (FindVacantSite(board, 1))
+		{
+			return checkresult(board);
+		}
 
 		return code;
 	}
-
-
+	
+	
+	public static int checkresult(int[][]board)
+	{
+		int code = 0 ;
+		
+		if (checkmate(board,1))
+		{
+			code=1;
+			return code;
+		}
+		else if (checkmate(board,2))
+		{
+			code=2;
+			return code;
+		}
+		else if (CheckForDraw(board))
+		{
+			code=3;
+			return code;
+		}
+		code=0;
+		return code;
+	}
+	
+	
+	
+	public static boolean FindOneToWin(int[][]board) {
+		boolean didit = false;
+		
+		
+		return didit;
+		
+	}
+	public static boolean FindOneToBlock(int[][]board) {
+		boolean didit = false;
+		
+		
+		return didit;
+		
+	}
+	public static boolean CheckForDraw(int[][]board) {
+		boolean isdraw = false;
+		
+		
+		return isdraw;
+		
+	}
+	
+	public static boolean FindVacantSite(int[][]board,int m) {
+		boolean didit = false;
+		
+		
+		return didit;
+		
+	}
+	
+	
 	public static void SayComputerWins()
 	{
 		System.out.println("Computer wins.");
