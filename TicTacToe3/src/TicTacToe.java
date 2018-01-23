@@ -291,7 +291,39 @@ public class TicTacToe {
 			return checkresult(board);
 		}
 		
-		if (FindVacantSite(board, 1))
+		if (FindVacantSite(board, 0))
+		{
+			return checkresult(board);
+		}
+		else if (FindVacantSite(board, 2))
+		{
+			return checkresult(board);
+		}
+		else if (FindVacantSite(board, 8))
+		{
+			return checkresult(board);
+		}
+		else if (FindVacantSite(board, 6))
+		{
+			return checkresult(board);
+		}
+		else if (FindVacantSite(board, 1))
+		{
+			return checkresult(board);
+		}
+		else if (FindVacantSite(board, 5))
+		{
+			return checkresult(board);
+		}
+		else if (FindVacantSite(board, 7))
+		{
+			return checkresult(board);
+		}
+		else if (FindVacantSite(board, 3))
+		{
+			return checkresult(board);
+		}
+		else if (FindVacantSite(board, 4))
 		{
 			return checkresult(board);
 		}
@@ -326,31 +358,264 @@ public class TicTacToe {
 	
 	
 	public static boolean FindOneToWin(int[][]board) {
-		boolean didit = false;
-		
-		
-		return didit;
-		
+		 
+		for(int r=0; r<3;r++)
+		{// check rows
+			if (board[r][0]==1
+					&& board[r][1]==1
+					&& board[r][2]==0)
+			{
+				//	Pattern A
+				return true;
+			}
+			else if (board[r][0]==1 
+					&& board[r][1]==0
+					&& board[r][2]==1)
+			{// Pattern B
+				return true;
+			}
+			else if (board[r][0]==0 
+					&& board[r][1]==1
+					&& board[r][2]==1)
+			{  // Pattern C
+				return true;
+			}
+		}
+		for(int c=0; c<3;c++)
+		{// check columns
+			if (board [0][c]==1 
+					&& board[1][c]==1
+					&& board[2][c]==0)
+			{
+				//	Pattern D
+				return true;
+			}	
+			else if (board [0][c]==1 
+					&& board[1][c]==0
+					&& board[2][c]==1)
+			{
+				//	Pattern E
+				return true;
+			}	
+			else if (board [0][c]==0
+					&& board[1][c]==1
+					&& board[2][c]==1)
+			{
+				//	Pattern F
+				return true;
+			}	
+		}
+		// check NW-SE diagonals 
+		if (board [0][0]==1 
+				&& board[1][1]==1
+				&& board[2][2]==0)
+		{
+			//	Pattern G
+			return true;
+		}	
+		else if (board [0][0]==1 
+				&& board[1][1]==0
+				&& board[2][2]==1)
+		{
+			//	Pattern H
+			return true;
+		}	
+		else if (board [0][0]==0
+				&& board[1][1]==1
+				&& board[2][2]==1)
+		{
+			//	Pattern I
+			return true;
+		}	
+		// check SW-NE diagonals 
+		if (board [2][0]==1 
+				&& board[1][1]==1
+				&& board[0][2]==0)
+		{
+			//	Pattern J
+			return true;
+		}	
+		else if (board [2][0]==1 
+				&& board[1][1]==0
+				&& board[0][2]==1)
+		{
+			//	Pattern K
+			return true;
+		}	
+		else if (board [2][0]==0
+				&& board[1][1]==1
+				&& board[0][2]==1)
+		{
+			//	Pattern L
+			return true;
+		}	
+		return false;
+
+
 	}
 	public static boolean FindOneToBlock(int[][]board) {
-		boolean didit = false;
+		
+		for(int r=0; r<3;r++)
+		{// check rows
+			if (board[r][0]==2
+					&& board[r][1]==2
+					&& board[r][2]==0)
+			{
+				//	Pattern A
+				return true;
+			}
+			else if (board[r][0]==2 
+					&& board[r][1]==0
+					&& board[r][2]==2)
+			{// Pattern B
+				return true;
+			}
+			else if (board[r][0]==0 
+					&& board[r][1]==2
+					&& board[r][2]==2)
+			{  // Pattern C
+				return true;
+			}
+		}
+		for(int c=0; c<3;c++)
+		{// check columns
+			if (board [0][c]==2 
+					&& board[1][c]==2
+					&& board[2][c]==0)
+			{
+				//	Pattern D
+				return true;
+			}	
+			else if (board [0][c]==2 
+					&& board[1][c]==0
+					&& board[2][c]==2)
+			{
+				//	Pattern E
+				return true;
+			}	
+			else if (board [0][c]==0
+					&& board[1][c]==2
+					&& board[2][c]==2)
+			{
+				//	Pattern F
+				return true;
+			}	
+		}
+		// check NW-SE diagonals 
+		if (board [0][0]==2 
+				&& board[1][1]==2
+				&& board[2][2]==0)
+		{
+			//	Pattern G
+			return true;
+		}	
+		else if (board [0][0]==2 
+				&& board[1][1]==0
+				&& board[2][2]==2)
+		{
+			//	Pattern H
+			return true;
+		}	
+		else if (board [0][0]==0
+				&& board[1][1]==2
+				&& board[2][2]==2)
+		{
+			//	Pattern I
+			return true;
+		}	
+		// check SW-NE diagonals 
+		if (board [2][0]==2 
+				&& board[1][1]==2
+				&& board[0][2]==0)
+		{
+			//	Pattern J
+			return true;
+		}	
+		else if (board [2][0]==2 
+				&& board[1][1]==0
+				&& board[0][2]==2)
+		{
+			//	Pattern K
+			return true;
+		}	
+		else if (board [2][0]==0
+				&& board[1][1]==2
+				&& board[0][2]==2)
+		{
+			//	Pattern L
+			return true;
+		}	
+		return false;
+
 		
 		
-		return didit;
 		
 	}
 	public static boolean CheckForDraw(int[][]board) {
-		boolean isdraw = false;
-		
+		boolean isdraw = true;
+		for(int r=0; r<3;r++)
+		{
+			for (int c=0; c<3; c++)
+			{
+				if (board [r][c]==0)
+				{
+					isdraw=false;
+				}
+			}
+		}
 		
 		return isdraw;
 		
 	}
 	
-	public static boolean FindVacantSite(int[][]board,int m) {
+	public static boolean FindVacantSite(int[][]b,int m) {
 		boolean didit = false;
 		
-		
+		if (m==0&& b[0][0]==0)
+		{
+			b[0][0]=1;
+			didit = true;
+		}
+		else if (m==2&& b[0][2]==0)
+		{
+			b[0][2]=1;
+			didit = true;
+		}
+		else if (m==8&& b[2][2]==0)
+		{
+			b[2][2]=1;
+			didit = true;
+		}
+		else if (m==6&& b[2][0]==0)
+		{
+			b[2][0]=1;
+			didit = true;
+		}
+		else if (m== 1&& b[0][1]==0)
+		{
+			b[0][1]=1;
+			didit = true;
+		}
+		else if (m==5&& b[1][2]==0)
+		{
+			b[1][2]=1;
+			didit = true;
+		}
+		else if (m==7&& b[1][1]==0)
+		{
+			b[2][1]=1;
+			didit = true;
+		}
+		else if (m==3&& b[1][0]==0)
+		{
+			b[1][0]=1;
+			didit = true;
+		}
+		else if (m==4&& b[1][1]==0)
+		{
+			b[1][1]=1;
+			didit = true;
+		}
 		return didit;
 		
 	}
