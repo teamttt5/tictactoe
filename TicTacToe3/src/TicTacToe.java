@@ -1,29 +1,82 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class TicTacToe {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int board[][]= {{0,0,0},{0,0,0},{0,0,0}};
-		Scanner keyboard=new Scanner(System.in);
-		int row=0,column=0;
+		int board[][]= {{0,0,0},{0,0,0},{0,0,0}}; 
+		int m = 0; 
+		Scanner keyboard = new Scanner(System.in);
+		Random randomNumbers = new Random(); 
+		int row = 0,column = 0;
 		board[row][column]=1;
 		
 		for(;;) 
 		{
 		int code= PlayerChoice(board);
 		
+        int i = 0;
+		if(i%2==0)
+        {
 		
-		
+	      do{
+	    	  System.out.println("enter position");
+	    	  row = keyboard.nextInt();
+	    	  column = keyboard.nextInt();
+	    	  
+	    	  if (board[row][column] != 0)
+	    	  {
+	    		  System.out.println("Choose different position");
+	    	  }
+	      } while(board[row][column] !=0);
+	      if(i%2==0)
+	      {
+	    	  m=1;
+	      }
+	      else {m=2;}
+	      
+	      
+	      
+	      do {
+	    	  row = randomNumbers.nextInt(3);
+	    	  column = randomNumbers.nextInt(3);
+	    	  }while(board[row][column] !=0);
+	         m=2;
+        }
+        
+        board[row][column]=m;
+        
+        drawboard(board);
+        
+        boolean didwin=
+        		win(board,m);
+        
+        if(didwin)
+        {
+        	System.out.println("you won!");
+        	return;
+        }
+        
+         System.out.println("draw");
 		}
 		
 		/*
-		//for(int i=0;i<9;i++) {
+        
+        	
+        
+        
+		
+        
+        
+        
+        
+        //for(int i=0;i<9;i++) {
 			
 			
 			
 			
-			
+	/*		
 			if(i==0||i==2||i==4||i==6||i==8)
 			
 			{
@@ -88,9 +141,31 @@ public class TicTacToe {
 
 		}
 		System.out.println("draw");
-	//}
-*/
+		*/
 	}
+
+
+
+
+
+
+
+	private static boolean win(int[][] board, int m) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+
+
+
+
+
+	private static void drawboard(int[][] board) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 
 
