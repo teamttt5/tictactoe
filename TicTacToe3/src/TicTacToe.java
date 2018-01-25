@@ -441,18 +441,21 @@ public class TicTacToe {
 					&& board[r][2]==0)
 			{
 				//	Pattern A
+				board [r][2]=1;
 				return true;
 			}
 			else if (board[r][0]==1 
 					&& board[r][1]==0
 					&& board[r][2]==1)
 			{// Pattern B
+				board [r][1]=1;
 				return true;
 			}
 			else if (board[r][0]==0 
 					&& board[r][1]==1
 					&& board[r][2]==1)
 			{  // Pattern C
+				board [r][0]=1;
 				return true;
 			}
 		}
@@ -463,6 +466,7 @@ public class TicTacToe {
 					&& board[2][c]==0)
 			{
 				//	Pattern D
+				board [2][c]=1;
 				return true;
 			}	
 			else if (board [0][c]==1 
@@ -470,6 +474,7 @@ public class TicTacToe {
 					&& board[2][c]==1)
 			{
 				//	Pattern E
+				board [1][c]=1;
 				return true;
 			}	
 			else if (board [0][c]==0
