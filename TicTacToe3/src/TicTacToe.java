@@ -11,11 +11,46 @@ public class TicTacToe {
 		Random randomNumbers = new Random(); 
 		int row = 0,column = 0;
 		board[row][column]=1;
-		
+		draw(board);
 		for(;;) 
 		{
-		int code= PlayerChoice(board);
-		
+			int code= PlayerChoice(board);
+			draw(board);
+			if(code==1)
+			{
+				SayComputerWins();
+				return;
+			}
+			else if(code==2)
+			{
+				SayPlayerWins();
+				return;
+			}
+			else if(code==3)
+			{
+				SayDraw();
+				return;
+			}
+			code=ComputerChoice(board);
+			draw(board);
+			if(code==1)
+			{
+				SayComputerWins();
+				return;
+			}
+			else if(code==2)
+			{
+				SayPlayerWins();
+				return;
+			}
+			else if(code==3)
+			{
+				SayDraw();
+				return;
+			}
+		}
+	}
+		/*
         int i = 0;
 		if(i%2==0)
         {
@@ -60,6 +95,8 @@ public class TicTacToe {
         
          System.out.println("draw");
 		}
+		*/
+		
 		
 		/*
         
@@ -142,7 +179,7 @@ public class TicTacToe {
 		}
 		System.out.println("draw");
 		*/
-	}
+	//}
 
 
 
@@ -333,7 +370,10 @@ public class TicTacToe {
 	public static int PlayerChoice(int[][]board){
 
 		int code=0;
-		/*
+		Scanner keyboard=new Scanner(System.in);
+
+		int row =0;
+		int column =0;
 		do {
 			//your turn	
 			System.out.println("row column");	
@@ -343,8 +383,19 @@ public class TicTacToe {
 				System.out.println("not available");
 			}
 		}while(board[row][column]!=0);
-		
-*/
+		board[row][column]=2;
+		if(checkmate(board,1))
+		{
+			return 1;
+		}
+		if(checkmate(board,2))
+		{
+			return 2;
+		}
+		if(CheckForDraw(board))
+		{
+			return 3;
+		}
 		return code;
 	}
 
