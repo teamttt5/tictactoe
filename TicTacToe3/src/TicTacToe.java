@@ -12,10 +12,12 @@ public class TicTacToe {
 		int row = 0,column = 0;
 		board[row][column]=1;
 		draw(board);
+	System.out.println();
 		for(;;) 
 		{
 			int code= PlayerChoice(board);
 			draw(board);
+			System.out.println();
 			if(code==1)
 			{
 				SayComputerWins();
@@ -33,6 +35,7 @@ public class TicTacToe {
 			}
 			code=ComputerChoice(board);
 			draw(board);
+			System.out.println();
 			if(code==1)
 			{
 				SayComputerWins();
@@ -593,18 +596,21 @@ public class TicTacToe {
 					&& board[r][2]==0)
 			{
 				//	Pattern A
+				board[r][2]=1;
 				return true;
 			}
 			else if (board[r][0]==2 
 					&& board[r][1]==0
 					&& board[r][2]==2)
 			{// Pattern B
+				board[r][1]=1;
 				return true;
 			}
 			else if (board[r][0]==0 
 					&& board[r][1]==2
 					&& board[r][2]==2)
 			{  // Pattern C
+				board[r][0]=1;
 				return true;
 			}
 		}
@@ -615,6 +621,7 @@ public class TicTacToe {
 					&& board[2][c]==0)
 			{
 				//	Pattern D
+				board[2][c]=1;
 				return true;
 			}	
 			else if (board [0][c]==2 
@@ -622,6 +629,7 @@ public class TicTacToe {
 					&& board[2][c]==2)
 			{
 				//	Pattern E
+				board[1][c]=1;
 				return true;
 			}	
 			else if (board [0][c]==0
@@ -629,6 +637,7 @@ public class TicTacToe {
 					&& board[2][c]==2)
 			{
 				//	Pattern F
+				board [0][c]=1;
 				return true;
 			}	
 		}
@@ -638,6 +647,7 @@ public class TicTacToe {
 				&& board[2][2]==0)
 		{
 			//	Pattern G
+			board[2][2]=1;
 			return true;
 		}	
 		else if (board [0][0]==2 
@@ -645,6 +655,7 @@ public class TicTacToe {
 				&& board[2][2]==2)
 		{
 			//	Pattern H
+			board[1][1]=1;
 			return true;
 		}	
 		else if (board [0][0]==0
@@ -652,6 +663,7 @@ public class TicTacToe {
 				&& board[2][2]==2)
 		{
 			//	Pattern I
+			board [0][0]=1;
 			return true;
 		}	
 		// check SW-NE diagonals 
@@ -660,6 +672,7 @@ public class TicTacToe {
 				&& board[0][2]==0)
 		{
 			//	Pattern J
+			board[0][2]=1;
 			return true;
 		}	
 		else if (board [2][0]==2 
@@ -667,6 +680,7 @@ public class TicTacToe {
 				&& board[0][2]==2)
 		{
 			//	Pattern K
+			board[1][1]=1;
 			return true;
 		}	
 		else if (board [2][0]==0
@@ -674,6 +688,7 @@ public class TicTacToe {
 				&& board[0][2]==2)
 		{
 			//	Pattern L
+			board [2][0]=1;
 			return true;
 		}	
 		return false;
