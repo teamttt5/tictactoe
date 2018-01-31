@@ -576,6 +576,7 @@ public class TicTacToe {
 					&& board[2][c]==1)
 			{
 				//	Pattern F
+				board [0][c]=1;
 				return true;
 			}	
 		}
@@ -585,6 +586,7 @@ public class TicTacToe {
 				&& board[2][2]==0)
 		{
 			//	Pattern G
+			board[2][2]=1;
 			return true;
 		}	
 		else if (board [0][0]==1 
@@ -592,6 +594,7 @@ public class TicTacToe {
 				&& board[2][2]==1)
 		{
 			//	Pattern H
+			board[1][1]=1;
 			return true;
 		}	
 		else if (board [0][0]==0
@@ -599,6 +602,7 @@ public class TicTacToe {
 				&& board[2][2]==1)
 		{
 			//	Pattern I
+			board [0][0]=1;
 			return true;
 		}	
 		// check SW-NE diagonals 
@@ -607,6 +611,7 @@ public class TicTacToe {
 				&& board[0][2]==0)
 		{
 			//	Pattern J
+			board[0][2]=1;
 			return true;
 		}	
 		else if (board [2][0]==1 
@@ -614,6 +619,7 @@ public class TicTacToe {
 				&& board[0][2]==1)
 		{
 			//	Pattern K
+			board[1][1]=1;
 			return true;
 		}	
 		else if (board [2][0]==0
@@ -621,6 +627,7 @@ public class TicTacToe {
 				&& board[0][2]==1)
 		{
 			//	Pattern L
+			board [2][0]=1;
 			return true;
 		}	
 		return false;
