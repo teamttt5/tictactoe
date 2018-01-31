@@ -53,145 +53,7 @@ public class TicTacToe {
 			}
 		}
 	}
-		/*
-        int i = 0;
-		if(i%2==0)
-        {
-		
-	      do{
-	    	  System.out.println("enter position");
-	    	  row = keyboard.nextInt();
-	    	  column = keyboard.nextInt();
-	    	  
-	    	  if (board[row][column] != 0)
-	    	  {
-	    		  System.out.println("Choose different position");
-		
-	      do{
-	    	  System.out.println("enter position");
-	    	  row = keyboard.nextInt();
-	    	  column = keyboard.nextInt();
-	    	  
-	    	  if (board[row][column] != 0)
-	    	  {
-	    		  System.out.println("Choose different position");
-	    	  }
-	      } while(board[row][column] !=0);
-	      if(i%2==0)
-	      {
-	    	  m=1;
-	      }
-	      else {m=2;}
-	      
-	      
-	      
-	      do {
-	    	  row = randomNumbers.nextInt(3);
-	    	  column = randomNumbers.nextInt(3);
-	    	  }while(board[row][column] !=0);
-	         m=2;
-        }
-        
-        board[row][column]=m;
-        
-        drawboard(board);
-        
-        boolean didwin=
-        		win(board,m);
-        
-        if(didwin)
-        {
-        	System.out.println("you won!");
-        	return;
-        }
-        
-         System.out.println("draw");
-		}
-		*/
-		
-		
-		/*
-        
-        	
-        
-        
-		
-        
-        
-        
-        
-        //for(int i=0;i<9;i++) {
-			
-			
-			
-			
-	/*		
-			if(i==0||i==2||i==4||i==6||i==8)
-			
-			{
-			
-			do {
-				//your turn	
-				System.out.println("row column");	
-				row = keyboard.nextInt();	
-				column = keyboard.nextInt();
-				if (board[row][column]!=0) {
-					System.out.println("not available");
-				}
-			}while(board[row][column]!=0);
-
-			}else {
-				do {
-					//computers turn 
-						
-						
-					
-//					row =randomnumbers.nextInt(3);
-//					column=randomnumbers.nextInt(3);
-					
-				}while(board[row][column]!=0);
 	
-			
-			
-			
-			}
-			
-			
-			if(i==0||i==2||i==4||i==6||i==8) {
-				board [row] [column]=1;
-			}
-			else {
-				board[row][column]=2;
-			}
-
-
-
-
-
-			draw(board);
-			System.out.println("..........................");
-
-
-			if(i==1||i==3||i==5||i==7) {
-				if(checkmate(board,2) )
-				{
-					System.out.println("O wins");
-					return;
-				}
-
-			}
-			else {
-				if(checkmate(board,1) )
-				{
-					System.out.println("x wins");
-					return;
-				}
-			}
-
-		}
-		System.out.println("draw");
-		*/
-	}
 
 
 
@@ -199,21 +61,10 @@ public class TicTacToe {
 
 
 
-	private static boolean win(int[][] board, int m) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 
 
 
-
-
-
-	private static void drawboard(int[][] board) {
-		// TODO Auto-generated method stub
-		
-	}
 
 
 
@@ -405,16 +256,6 @@ public class TicTacToe {
 
 		int code=0;
 		Scanner keyboard=new Scanner(System.in);
-		do {
-			//your turn	
-			System.out.println("row column");	
-			row = keyboard.nextInt();	
-			column = keyboard.nextInt();
-			if (board[row][column]!=0) {
-				System.out.println("not available");
-			}
-		}while(board[row][column]!=0);
-		
 		int row =0;
 		int column =0;
 		do {
